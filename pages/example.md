@@ -26,6 +26,8 @@ pageTheme:
       mobile: '10'
       tablet: '11'
       desktop: '12'
+pageInclude: null
+modules: []
 components:
   - type: Group
     id: Grupo 01
@@ -49,7 +51,7 @@ components:
         paddingTop: true
         paddingBottom: true
         layout: text-bigger
-        title: 'BLOCO: COLUMN STICKY _ LAYOUT: TEXT-BIGGER!!@'
+        title: 'BLOCO: COLUMN STICKY _ LAYOUT: TEXT-BIGGER!!@ TESTE'
         components:
           - type: Spacer
             desktop: 800px
@@ -78,7 +80,7 @@ components:
     bgColor: Secondary
     customBgColor: ''
     backgroundMedia: []
-    overlay: ''
+    overlay: none
     components:
       - type: Column
         txtColor: ''
@@ -141,7 +143,7 @@ components:
     bgColor: Highlight
     customBgColor: ''
     backgroundMedia: []
-    overlay: ''
+    overlay: none
     components:
       - type: ColumnSticky
         txtColor: ''
@@ -178,7 +180,7 @@ components:
     bgColor: Secondary
     customBgColor: ''
     backgroundMedia: []
-    overlay: ''
+    overlay: none
     components:
       - type: Columns
         paddingTop: false
@@ -236,7 +238,7 @@ components:
     backgroundMedia:
       - type: backgroundImage
         imgSrc: /uploads/expulsion-san-marcos.jpg
-    overlay: ''
+    overlay: none
     components:
       - type: ColumnSticky
         txtColor: ''
@@ -262,7 +264,7 @@ components:
     bgColor: Secondary
     customBgColor: ''
     backgroundMedia: []
-    overlay: ''
+    overlay: none
     components:
       - type: Columns
         paddingTop: false
@@ -353,7 +355,7 @@ components:
     bgColor: Primary
     customBgColor: ''
     backgroundMedia: []
-    overlay: ''
+    overlay: none
     components:
       - type: Slider
         slides:
@@ -375,7 +377,7 @@ components:
     bgColor: Secondary
     customBgColor: ''
     backgroundMedia: []
-    overlay: ''
+    overlay: none
     components:
       - type: Columns
         paddingTop: false
@@ -522,7 +524,7 @@ components:
     bgColor: Secondary
     customBgColor: ''
     backgroundMedia: []
-    overlay: ''
+    overlay: none
     components:
       - type: Columns
         paddingTop: false
@@ -655,7 +657,7 @@ components:
     bgColor: Primary
     customBgColor: ''
     backgroundMedia: []
-    overlay: ''
+    overlay: none
     components:
       - type: ChartPercentage
         chartPercentageTitle: 'Bloco: Chart Percentage _ Title'
@@ -715,7 +717,7 @@ components:
     bgColor: Secondary
     customBgColor: ''
     backgroundMedia: []
-    overlay: ''
+    overlay: none
     components:
       - type: Column
         paddingTop: false
@@ -747,7 +749,7 @@ components:
     bgColor: Secondary
     customBgColor: ''
     backgroundMedia: []
-    overlay: ''
+    overlay: none
     components:
       - type: Compare
         imageLeft: /uploads/map.png
@@ -1037,7 +1039,12 @@ components:
     showInMenu: true
     animations: true
     txtColor: Secondary
+    customTxtColor: ''
     bgColor: Primary
+    customBgColor: ''
+    backgroundMedia: []
+    overlay: none
+    ctaMedia: []
     ctaText: 'Bloco: CTA_CTA Text_Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.'
     highlightedText: Sed ut perspiciatis unde omnis iste natus error
     link:
@@ -1057,7 +1064,7 @@ components:
     bgColor: Secondary
     customBgColor: ''
     backgroundMedia: []
-    overlay: ''
+    overlay: none
     components:
       - type: Columns
         paddingTop: true
@@ -1165,7 +1172,7 @@ components:
     bgColor: Secondary
     customBgColor: ''
     backgroundMedia: []
-    overlay: ''
+    overlay: none
     components:
       - type: VideoEmbed
         wideVideo: false
@@ -1180,16 +1187,19 @@ components:
           - image: /uploads/Captura de Tela-20241220083834-158x147.png
             link:
               url: '#'
+              target: ''
               customTarget: ''
               title: ''
           - image: /uploads/Captura de Tela-20241220084024-224x105.png
             link:
               url: '#'
+              target: ''
               customTarget: ''
               title: ''
           - image: /uploads/Captura de Tela-20241220084110-267x93.png
             link:
               url: '#'
+              target: ''
               customTarget: ''
               title: ''
       - type: CardsCall
@@ -1237,7 +1247,7 @@ components:
     bgColor: Secondary
     customBgColor: ''
     backgroundMedia: []
-    overlay: ''
+    overlay: none
     components:
       - type: Column
         paddingTop: false
@@ -1276,6 +1286,7 @@ components:
     customBgColor: '#d78989ff'
     backgroundMedia: []
     overlay: ''
+    ctaMedia: []
     ctaText: Este é um exemplo de CTA com **layout de texto** e cor de destaque (Highlight). O texto destacado aparece à esquerda e o conteúdo à direita.
     highlightedText: CTA Texto Simples
     link:
@@ -1298,6 +1309,7 @@ components:
     ctaMedia:
       - type: ctaImage
         src: /uploads/casa_afonso_sardinha.jpg
+        externalUrl: ''
     ctaText: Este é um exemplo de CTA com **layout de mídia** — a imagem aparece à esquerda e o texto com botão à direita.
     highlightedText: ''
     link:
@@ -1319,6 +1331,7 @@ components:
       - type: backgroundImage
         imgSrc: /uploads/group-bg.png
     overlay: dark
+    ctaMedia: []
     ctaText: Este é um exemplo de CTA com **imagem de background**, overlay escuro e texto claro sobreposto. Demonstra a integração com `backgroundMedia` e `overlay`.
     highlightedText: CTA com Background
     link:
