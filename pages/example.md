@@ -27,7 +27,31 @@ pageTheme:
       tablet: '11'
       desktop: '12'
 pageInclude: null
-modules: []
+modules:
+  - type: MapBox
+    style: mapbox://styles/mfabricio-pmrp/cmtvlzm0n00fp01qodfzifrsl
+    token: pk.eyJ1IjoibWZhYnJpY2lvLXBtcnAiLCJhIjoiY210dDFmZzc2MDJ3azJ6b201dTNhZGxobiJ9.TDxddkHOjhSthrFOQArX4Q
+    centerLng: '-21.160'
+    centerLat: '-47.812'
+    zoom: '11.95'
+    bearing: '0'
+    pitch: '0'
+    layers: ''
+    columnAlign: left
+    floatingText: false
+    views:
+      - id: map1_view1
+        centerLng: '-21.150'
+        centerLat: '-47.840'
+        zoom: '16.27'
+        mobileZoom: '16.27'
+        duration: '2000'
+        bearing: '0'
+        pitch: '0'
+        layers: ''
+        title: ''
+        notes: ''
+        items: []
 components:
   - type: Group
     id: Grupo 01
