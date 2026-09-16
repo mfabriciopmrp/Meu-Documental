@@ -51,7 +51,7 @@ components:
         paddingTop: true
         paddingBottom: true
         layout: text-bigger
-        title: 'BLOCO: COLUMN STICKY _ LAYOUT: TEXT-BIGGER!!@ TESTE'
+        title: 'BLOCO: COLUMN STICKY _ LAYOUT: TEXT-BIGGER!!@ TESTE2'
         components:
           - type: Spacer
             desktop: 800px
