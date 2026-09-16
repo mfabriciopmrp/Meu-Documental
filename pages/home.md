@@ -27,7 +27,31 @@ pageTheme:
       tablet: 10px
       desktop: 10px
 pageInclude: null
-modules: []
+modules:
+  - type: MapBox
+    style: mapbox://styles/mfabricio-pmrp/cmtvlsowq00fn01qo3sa5hiu6
+    token: pk.eyJ1IjoibWZhYnJpY2lvLXBtcnAiLCJhIjoiY210dDFmZzc2MDJ3azJ6b201dTNhZGxobiJ9.TDxddkHOjhSthrFOQArX4Q
+    centerLng: '-21.168'
+    centerLat: '-47.831'
+    zoom: '11.78'
+    bearing: '0'
+    pitch: '0'
+    layers: ''
+    columnAlign: center
+    floatingText: false
+    views:
+      - id: map1_view1
+        centerLng: '-21.151'
+        centerLat: '-47.840'
+        zoom: '16.12'
+        mobileZoom: '16.12'
+        duration: '2000'
+        bearing: '0'
+        pitch: '0'
+        layers: ''
+        title: ''
+        notes: ''
+        items: []
 components:
   - type: Group
     id: main
@@ -41,7 +65,7 @@ components:
     bgColor: Secondary
     customBgColor: ''
     backgroundMedia: []
-    overlay: ''
+    overlay: none
     components:
       - type: Columns
         paddingTop: false
@@ -79,4 +103,16 @@ components:
                 text: Guia de Instalação & Uso
               icon: ''
               size: ''
+  - type: Map
+    id: map1_view1
+    shortTitle: Teste
+    longTitle: Teste
+    description: ''
+    showInMenu: true
+    animations: true
+    txtColor: Primary
+    bgColor: ''
+    components: []
+    columnAlign: left
+    floatingText: false
 ---
