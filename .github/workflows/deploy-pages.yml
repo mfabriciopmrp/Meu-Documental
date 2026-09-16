@@ -1,0 +1,117 @@
+name: Deploy to GitHub Pages (Combined)
+
+on:
+  push:
+    branches: [main, preview]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-combined
+  cancel-in-progress: true
+
+jobs:
+  precheck_pages:
+    name: "Precheck: Is GitHub Pages enabled?"
+    runs-on: ubuntu-latest
+    outputs:
+      enabled: ${{ steps.chk.outputs.enabled }}
+    steps:
+      - name: "Query GitHub API for Pages status"
+        id: chk
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO:     ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          if gh api "repos/$REPO/pages" >/dev/null 2>&1; then
+            echo "enabled=true" >> $GITHUB_OUTPUT
+            echo "GitHub Pages is enabled for $REPO"
+          else
+            echo "enabled=false" >> $GITHUB_OUTPUT
+            echo "::warning::GitHub Pages is NOT enabled for $REPO. Skipping build/deploy."
+          fi
+
+  build:
+    name: "Build (main + preview combined)"
+    needs: precheck_pages
+    if: ${{ needs.precheck_pages.outputs.enabled == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      # ─── Build MAIN ──────────────────────────────────
+      - name: "Checkout main branch"
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: ./repo-main
+
+      - name: "Setup Node.js"
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: "Install dependencies + Build MAIN"
+        working-directory: ./repo-main
+        run: |
+          npm install
+          npm run build
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}/
+          SITE: https://${{ github.repository_owner }}.github.io
+
+      - name: "Copy MAIN to dist/ root"
+        run: |
+          mkdir -p dist
+          cp -r ./repo-main/dist/* dist/
+
+      # ─── Build PREVIEW ───────────────────────────────
+      - name: "Checkout preview branch"
+        id: checkout-preview
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          ref: preview
+          path: ./repo-preview
+
+      - name: "Install dependencies + Build PREVIEW"
+        if: steps.checkout-preview.outcome == 'success'
+        working-directory: ./repo-preview
+        run: |
+          npm install
+          npm run build
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}/preview/
+          SITE: https://${{ github.repository_owner }}.github.io
+
+      - name: "Copy PREVIEW to dist/preview/"
+        if: steps.checkout-preview.outcome == 'success'
+        run: |
+          mkdir -p dist/preview
+          cp -r ./repo-preview/dist/* dist/preview/
+
+      # ─── Upload combinado ────────────────────────────
+      - name: "Setup Pages"
+        uses: actions/configure-pages@v5
+
+      - name: "Upload artifact for Pages"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    name: "Deploy to GitHub Pages"
+    needs: build
+    if: ${{ needs.precheck_pages.outputs.enabled == 'true' }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: "Deploy"
+        id: deployment
+        uses: actions/deploy-pages@v4

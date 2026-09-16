@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+.astro
+.omo
+.serena
+
+# Regenerated at every build by the core YAML merge plugin. The admin shell
+# (index.html) is a copy-once scaffold tracked by the consumer.
+public/admin/config.yml
