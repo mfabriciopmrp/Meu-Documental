@@ -77,7 +77,7 @@ components:
             - type: Text
               hasDropCap: false
               content: |-
-                # Bem-vindes à Documental
+                # Bem-vindUs à Documental
 
                 #### Sua plataforma de software livre para a criação de geo-narrativas.
         column2:
