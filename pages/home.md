@@ -77,7 +77,7 @@ components:
             - type: Text
               hasDropCap: false
               content: |-
-                # Bem-vindo à Documental
+                # Bem-vindes à Documental
 
                 #### Sua plataforma de software livre para a criação de geo-narrativas.
         column2:
@@ -91,7 +91,7 @@ components:
               content: |-
                 Para começar a trabalhar em seu projeto, selecione o modo Editor ou Tela dividida na parte superior esquerda, em seguida, clique em "Work with local repository" para escolher a pasta do projeto em seu computador.
 
-                Para saber mais sobre as possibilidades e opções de aplicação dos blocos temáticos, clique no link abaixo.
+                Para saber mais sobre as possibilidades e opções de aplicação dos blocos temáticos, clique no link abaixo. (ou não)
             - type: Spacer
               desktop: 30px
               tablet: ''
