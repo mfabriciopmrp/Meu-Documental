@@ -104,15 +104,19 @@ components:
               icon: ''
               size: ''
   - type: Map
-    id: map1_view1
+    id: Mapa 1
     shortTitle: Teste
     longTitle: Teste
     description: ''
     showInMenu: true
     animations: true
-    txtColor: Primary
+    txtColor: ''
     bgColor: ''
-    components: []
-    columnAlign: left
+    components:
+      - type: MapView
+        txtColor: ''
+        bgColor: ''
+        mapView: map1_view1
+    columnAlign: center
     floatingText: false
 ---
