@@ -29,8 +29,8 @@ pageTheme:
 pageInclude: null
 modules:
   - type: MapBox
-    style: mapbox://styles/marlus/cjyt3uyhf15mr1cthc2942wxz
-    token: pk.eyJ1IjoibWFybHVzIiwiYSI6IjlmYlhtaEkifQ.vMxORYorRKnueDl3E5itEQ
+    style: mapbox://styles/mfabricio-pmrp/cmtvlzm0n00fp01qodfzifrsl
+    token: pk.eyJ1IjoibWZhYnJpY2lvLXBtcnAiLCJhIjoiY210dDFmZzc2MDJ3azJ6b201dTNhZGxobiJ9.TDxddkHOjhSthrFOQArX4Q
     centerLng: '-21.168'
     centerLat: '-47.831'
     zoom: '11.78'
@@ -77,7 +77,7 @@ components:
             - type: Text
               hasDropCap: false
               content: |-
-                # Bem-vindUs à Documental
+                # Bem-vindos à Documental
 
                 #### Sua plataforma de software livre para a criação de geo-narrativas.
         column2:
