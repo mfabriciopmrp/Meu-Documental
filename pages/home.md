@@ -29,8 +29,8 @@ pageTheme:
 pageInclude: null
 modules:
   - type: MapBox
-    style: mapbox://styles/mfabricio-pmrp/cmtvlsowq00fn01qo3sa5hiu6
-    token: pk.eyJ1IjoibWZhYnJpY2lvLXBtcnAiLCJhIjoiY211NWttOHRhMDBybDJ5bzdlZnYxMnc5byJ9.DcRW6kCmUfjoBN4qXYCpdQ
+    style: mapbox://styles/marlus/cjyt3uyhf15mr1cthc2942wxz
+    token: pk.eyJ1IjoibWFybHVzIiwiYSI6IjlmYlhtaEkifQ.vMxORYorRKnueDl3E5itEQ
     centerLng: '-21.168'
     centerLat: '-47.831'
     zoom: '11.78'
